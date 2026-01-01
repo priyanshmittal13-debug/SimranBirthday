@@ -1,46 +1,17 @@
-/* Body & Fonts */
 body {
-    background: #fdf6e3; /* Light theme */
+    background: #fdf6e3;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     overflow-x: hidden;
 }
 
 /* Content layout */
-.content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px;
-}
+.content { display: flex; justify-content: space-around; align-items: center; padding: 50px; }
 
-.left h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 60px;
-    margin: 0;
-    color: #ff4500;
-}
+.left h1 { font-family: 'Dancing Script', cursive; font-size: 60px; margin: 0; color: #ff4500; }
 
 /* Flip Simran's photo */
-.box__account .image img {
-    width: 200px;
-    border-radius: 50%;
-    transform: rotate(180deg);
-}
-
-/* Party poppers animation */
-.party__popper {
-    position: absolute;
-    font-size: 20px;
-    color: #ff4500;
-    animation: floatPop 8s linear infinite;
-}
-
-@keyframes floatPop {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-400px) rotate(360deg); opacity: 0.8; }
-    100% { transform: translateY(0) rotate(720deg); opacity: 0; }
-}
+.box__account .image img { width: 200px; border-radius: 50%; transform: rotate(180deg); }
 
 /* Decorations floating */
 .decorate_img {
@@ -69,6 +40,22 @@ body {
     z-index: 100;
 }
 
-.boxMail.active {
-    display: block;
+.boxMail.active { display: block; }
+
+/* Confetti pieces */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.8;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear infinite;
+    border-radius: 3px;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity:1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
 }
